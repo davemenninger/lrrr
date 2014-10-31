@@ -39,6 +39,34 @@ sub startup {
 
   # Normal route to controller
   $r->get('/')->to('example#welcome');
+
+  $r->post('/login' => sub {
+    my $self = shift;
+    my $u    = $self->req->param('u');
+    my $p    = $self->req->param('p');
+
+
+    $self->render(text => ($self->authenticate($u, $p)) ? 'ok' : 'failed');
+  });
+
+  $r->get( '/logout' => sub {
+    my $self = shift;
+
+    $self->logout();
+    $self->render(text => 'logout');
+  });
+
+  $r->get('/user/:uid' => sub {
+    $self = shift;
+    my $uid = $self->param('uid');
+    $self->render(text=>"you is $uid!");
+  });
+
+  $r->get('/hidden' => sub {
+    $self = shift;
+    $self->render( text => ($self->is_user_authenticated) ? 'secrets!' : 'go away!' );
+  });
+
 }
 
 1;
