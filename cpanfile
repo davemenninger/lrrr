@@ -1,3 +1,3 @@
-requires 'Mojolicious'
-requires 'Mojolicious::Commands'
-requires 'Mojolicious::Plugin::Authentication'
+requires 'Mojolicious';
+requires 'Mojolicious::Plugin::Authentication';
+requires 'Mojolicious::Commands';
