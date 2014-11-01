@@ -6,7 +6,7 @@ sub startup {
   my $self = shift;
 
   # Documentation browser under "/perldoc"
-  $self->plugin('PODRenderer');
+  #$self->plugin('PODRenderer');
 
   # auth
   $self->plugin( authentication => {
@@ -40,21 +40,9 @@ sub startup {
   # Normal route to controller
   $r->get('/')->to('example#welcome');
 
-  $r->post('/login' => sub {
-    my $self = shift;
-    my $u    = $self->req->param('u');
-    my $p    = $self->req->param('p');
+  $r->any('/login')->to('auth#login');
 
-
-    $self->render(text => ($self->authenticate($u, $p)) ? 'ok' : 'failed');
-  });
-
-  $r->get( '/logout' => sub {
-    my $self = shift;
-
-    $self->logout();
-    $self->render(text => 'logout');
-  });
+  $r->get('/logout')->to('auth#logoff');
 
   $r->get('/user/:uid' => sub {
     $self = shift;

@@ -1,4 +1,4 @@
-# Lrrr: Like Jrrr, but bigger
+# Lrrr: Like [https://github.com/davemenninger/jrrr](Jrrr), but bigger
 
 This is a test app for trying new things in Mojolicious.
 
@@ -9,12 +9,13 @@ This is a test app for trying new things in Mojolicious.
 
 # Roadmap
 
-* Add simplest authentication - done
-* move authentication into its own controller
-* create login page ( post )
+* ~~Add simplest authentication~~
+* ~~move authentication routes into own controller~~
+* ~~create login page ( post )~~
 * connect authentication to external database ( mongo )
+* create auth plugin
 * make authentication more secure ( hash, salt )
 * add authorization ( logged in user can see some things, but not others )
 * user can create document objects into mongo
 * roles: admin, author, reader?
-* more templates
+* more templates: home, user, ...

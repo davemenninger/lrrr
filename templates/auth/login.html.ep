@@ -1,0 +1,11 @@
+% layout 'default';
+% title 'Login';
+<h2>Login</h2>
+
+<p><%= $msg %></p>
+
+%= form_for '/login' => ( method => 'POST' ) => begin
+  u: <%= text_field 'u' %>
+  p: <%= text_field 'p' %>
+  %= submit_button 'Log in'
+% end
