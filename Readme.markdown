@@ -1,4 +1,4 @@
-# Lrrr: Like [https://github.com/davemenninger/jrrr](Jrrr), but bigger
+# Lrrr: Like [Jrrr](https://github.com/davemenninger/jrrr), but bigger
 
 This is a test app for trying new things in Mojolicious.
 
