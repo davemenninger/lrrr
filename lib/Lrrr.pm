@@ -1,25 +1,28 @@
 package Lrrr;
 use Mojo::Base 'Mojolicious';
+use Mango;
+use Mango::BSON;
 
 # This method will run once at server start
 sub startup {
   my $self = shift;
 
-  # Documentation browser under "/perldoc"
-  #$self->plugin('PODRenderer');
+  my $mongo_uri = $ENV{'MONGOLAB_URI'}; #'mongodb://<user>:<pass>@<server>/<database>';
+  $self->helper( mango => sub { state $mango = Mango->new($mongo_uri) } );
 
   # auth
   $self->plugin( authentication => {
     autoload_user => 1,
     load_user => sub {
         my $self = shift;
-        my $uid  = shift;
+        my $username = shift;
 
-        return {
-            'username' => 'foo',
-            'password' => 'bar',
-            'name'     => 'Foo'
-            } if($uid eq 'userid' || $uid eq 'useridwithextradata');
+        my $collection = $self->mango->db('test')->collection('users');
+        my $user = $collection->find_one( {username => $username} );
+
+        return { 
+          'username' => $user->{username} 
+        };
         return undef;
     },
     validate_user => sub {
@@ -28,8 +31,10 @@ sub startup {
         my $password = shift || '';
         my $extradata = shift || {};
 
-        return 'useridwithextradata' if($username eq 'foo' && $password eq 'bar' && ( $extradata->{'ohnoes'} || '' ) eq 'itsameme');
-        return 'userid' if($username eq 'foo' && $password eq 'bar');
+        my $collection = $self->mango->db('test')->collection('users');
+        my $user = $collection->find_one( {username => $username} );
+
+        return $user->{username} if ( $password eq $user->{password} );
         return undef;
     },
   });
@@ -44,10 +49,15 @@ sub startup {
 
   $r->get('/logout')->to('auth#logoff');
 
-  $r->get('/user/:uid' => sub {
+  $r->get('/user' => sub {
     $self = shift;
-    my $uid = $self->param('uid');
-    $self->render(text=>"you is $uid!");
+
+    if( $self->is_user_authenticated ){
+      my $username = $self->current_user->{'username'};
+      $self->render(text=>"your username is $username!");
+    } else {
+      $self->render(text=>"not logged in!");
+    }
   });
 
   $r->get('/hidden' => sub {
