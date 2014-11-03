@@ -12,7 +12,8 @@ This is a test app for trying new things in Mojolicious.
 * ~~Add simplest authentication~~
 * ~~move authentication routes into own controller~~
 * ~~create login page ( post )~~
-* connect authentication to external database ( mongo )
+* ~~connect authentication to external database ( mongo )~~
+* wait for November 18th, 2014 for mongolab to upgrade default version to 2.6, argh!
 * create auth plugin
 * make authentication more secure ( hash, salt )
 * add authorization ( logged in user can see some things, but not others )
