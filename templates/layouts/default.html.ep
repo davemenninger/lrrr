@@ -5,6 +5,7 @@
     <a href="/">home</a> 
     <a href="/login">login</a> 
     <a href="/logout">logout</a>
+    <a href="/user">user</a>
     <%= content %>
   </body>
 </html>

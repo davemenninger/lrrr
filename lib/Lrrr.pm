@@ -43,7 +43,10 @@ sub startup {
   my $r = $self->routes;
 
   # Normal route to controller
-  $r->get('/')->to('example#welcome');
+  $r->get('/' => sub {
+    $self = shift;
+    $self->render('home');
+  });
 
   $r->any('/login')->to('auth#login');
 
@@ -51,13 +54,7 @@ sub startup {
 
   $r->get('/user' => sub {
     $self = shift;
-
-    if( $self->is_user_authenticated ){
-      my $username = $self->current_user->{'username'};
-      $self->render(text=>"your username is $username!");
-    } else {
-      $self->render(text=>"not logged in!");
-    }
+    $self->render('user');
   });
 
   $r->get('/hidden' => sub {

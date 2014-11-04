@@ -1,0 +1,12 @@
+% layout 'default';
+% title 'User';
+<h2>User</h2>
+
+<p>
+% if( my $authentication = stash '__authentication__' ) {
+  You are logged in as <%= $authentication->{user}->{username} %>.
+  Here is <a href="/hidden">a page</a> with something you can only see if logged in.
+% } else {
+  You are not logged in.
+% }
+</p>

@@ -6,6 +6,6 @@
 
 %= form_for '/login' => ( method => 'POST' ) => begin
   u: <%= text_field 'u' %>
-  p: <%= text_field 'p' %>
+  p: <%= password_field 'p' %>
   %= submit_button 'Log in'
 % end
