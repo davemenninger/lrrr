@@ -4,6 +4,9 @@ This is a test app for trying new things in Mojolicious.
 
 [![Lrrr](http://img4.wikia.nocookie.net/__cb20130329124434/en.futurama/images/c/c5/Lurr.png)](http://theinfosphere.org/Lrrr)
 
+## Buttons!
+
+[![Build Status](https://travis-ci.org/davemenninger/lrrr.svg?branch=master)](https://travis-ci.org/davemenninger/lrrr)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
