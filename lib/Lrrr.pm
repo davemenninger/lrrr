@@ -1,4 +1,8 @@
 package Lrrr;
+
+use strict;
+use warnings;
+
 use Mojo::Base 'Mojolicious';
 use Mango;
 use Mango::BSON;
@@ -22,7 +26,7 @@ sub startup {
 
         return { 
           'username' => $user->{username} 
-        };
+        } if ( defined $user->{username} );
         return undef;
     },
     validate_user => sub {
