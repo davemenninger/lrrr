@@ -14,9 +14,12 @@ This is a test app for trying new things in Mojolicious.
 * ~~create login page ( post )~~
 * ~~connect authentication to external database ( mongo )~~
 * wait for November 18th, 2014 for mongolab to upgrade default version to 2.6, argh!
-* create auth plugin
+* create authentication plugin
 * make authentication more secure ( hash, salt )
+* tests for authentication
 * add authorization ( logged in user can see some things, but not others )
+* tests for authorization
 * user can create document objects into mongo
 * roles: admin, author, reader?
 * more templates/routes: ~~home~~, ~~user~~, user/:username, "posts" ...
+* Dockerfile; add mongodb setup? fixtures?
