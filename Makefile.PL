@@ -10,6 +10,6 @@ WriteMakefile(
     'Mojolicious::Plugin::Authentication' => 0,
     'Mojolicious::Commands' => 0,
     'Mango' => 0 
-  }
+  },
   test      => {TESTS => 't/*.t'}
 );
