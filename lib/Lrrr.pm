@@ -1,4 +1,6 @@
-package Lrrr 0.01;
+package Lrrr;
+
+$VERSION = '0.01';
 
 use strict;
 use warnings;
