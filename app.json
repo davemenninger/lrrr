@@ -1,6 +1,6 @@
 {
   "env": { "BUILDPACK_URL": "https://github.com/kazeburo/heroku-buildpack-perl-procfile.git" },
-  "success_url": "/"
+  "success_url": "/",
   "addons": [
     "mongolab"
   ]
