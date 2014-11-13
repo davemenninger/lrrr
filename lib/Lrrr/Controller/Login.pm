@@ -1,4 +1,4 @@
-package Lrrr::Login;
+package Lrrr::Controller::Login;
 
 use strict;
 use warnings;
