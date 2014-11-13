@@ -6,6 +6,7 @@ perl:
 deploy:
   provider: heroku
   api_key:
+  buildpack: https://github.com/kazeburo/heroku-buildpack-perl-procfile.git
     secure: S1lHrhqjN0/ch/J+i7Nxyueoh+AhtAbtxPZuKaP/u7BOmonSSw++vOgVcqv8pcZf83B5LXcNj4bb0AwcNFn3awhmQ4zXTWHt4wWrK3KEEK6uEfkEswrQsOdnzlp6VCllJ5Ivzfg4U7B0DHRSyLCz73fK6b2I3JE7e/8G7KO5xU4=
   app: lrrr
   on:
