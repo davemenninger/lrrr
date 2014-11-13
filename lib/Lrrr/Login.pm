@@ -1,4 +1,4 @@
-package Lrrr::Auth;
+package Lrrr::Login;
 
 use strict;
 use warnings;
@@ -35,7 +35,7 @@ sub logoff {
   my $self = shift;
   $self->logout();
   $self->render(
-    template=>'auth/login',
+    template=>'login/login',
     format=>'html',
     msg => 'you are now logged out.'
   );

@@ -32,9 +32,9 @@ sub startup {
     $self->render('home');
   });
 
-  $r->any('/login')->to('auth#login');
+  $r->any('/login')->to( controller => 'login', action => 'login' );
 
-  $r->get('/logout')->to('auth#logoff');
+  $r->get('/logout')->to( controller => 'login', action => 'logoff' );
 
   $r->get('/user' => sub {
     $self = shift;
