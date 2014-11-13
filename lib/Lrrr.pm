@@ -5,7 +5,7 @@ use warnings;
 
 use Mojo::Base 'Mojolicious';
 use Mango;
-use Mango::BSON;
+use Lrrr::Authentication;
 
 # This method will run once at server start
 sub startup {
@@ -17,30 +17,8 @@ sub startup {
   # auth
   $self->plugin( authentication => {
     autoload_user => 1,
-    load_user => sub {
-        my $self = shift;
-        my $username = shift;
-
-        my $collection = $self->mango->db('test')->collection('users');
-        my $user = $collection->find_one( {username => $username} );
-
-        return { 
-          'username' => $user->{username} 
-        } if ( defined $user->{username} );
-        return undef;
-    },
-    validate_user => sub {
-        my $self = shift;
-        my $username = shift || '';
-        my $password = shift || '';
-        my $extradata = shift || {};
-
-        my $collection = $self->mango->db('test')->collection('users');
-        my $user = $collection->find_one( {username => $username} );
-
-        return $user->{username} if ( $password eq $user->{password} );
-        return undef;
-    },
+    load_user => sub { return Lrrr::Authentication->load_user(@_); },
+    validate_user => sub { return Lrrr::Authentication->validate_user(@_); }
   });
 
   # Router

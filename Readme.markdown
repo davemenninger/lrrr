@@ -10,14 +10,14 @@ This is a test app for trying new things in Mojolicious.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-# Roadmap
+## Roadmap
 
 * ~~Add simplest authentication~~
 * ~~move authentication routes into own controller~~
 * ~~create login page ( post )~~
 * ~~connect authentication to external database ( mongo )~~
 * wait for November 18th, 2014 for mongolab to upgrade default version to 2.6, argh!
-* create authentication plugin
+* fix travis hack after travis upgrades default mongodb version to 2.6
 * make authentication more secure ( hash, salt )
 * tests for authentication
 * add authorization ( logged in user can see some things, but not others )
@@ -26,3 +26,5 @@ This is a test app for trying new things in Mojolicious.
 * roles: admin, author, reader?
 * more templates/routes: ~~home~~, ~~user~~, user/:username, "posts" ...
 * Dockerfile; add mongodb setup? fixtures?
+
+## Credits
