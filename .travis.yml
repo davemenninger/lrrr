@@ -1,16 +1,25 @@
 language: perl
 perl:
-  - "5.20"
-  - "5.18"
-  - "5.10"
+- '5.20'
+- '5.18'
+- '5.10'
+deploy:
+  provider: heroku
+  api_key:
+    secure: S1lHrhqjN0/ch/J+i7Nxyueoh+AhtAbtxPZuKaP/u7BOmonSSw++vOgVcqv8pcZf83B5LXcNj4bb0AwcNFn3awhmQ4zXTWHt4wWrK3KEEK6uEfkEswrQsOdnzlp6VCllJ5Ivzfg4U7B0DHRSyLCz73fK6b2I3JE7e/8G7KO5xU4=
+  app: lrrr
+  on:
+    repo: davemenninger/lrrr
 #services:
-#  - mongodb
-# below should theoretically get travis to use mongodb 2.6 until they upgrade their default
+#- mongodb
+# travis currently doesn't run mongodb 2.6: https://github.com/travis-ci/travis-ci/issues/2246
+# below lines get travis to use mongodb 2.6 until they upgrade their default
 # source: https://github.com/oliwer/mango/blob/master/.travis.yml
 before_install:
-  - "sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10"
-  - "echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list"
-  - "sudo apt-get update"
-  - "sudo apt-get install mongodb-org-server"
+- sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+- echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' |
+  sudo tee /etc/apt/sources.list.d/mongodb.list
+- sudo apt-get update
+- sudo apt-get install mongodb-org-server
 before_script:
-  - "until nc -z localhost 27017; do echo Waiting for MongoDB; sleep 1; done"
+- until nc -z localhost 27017; do echo Waiting for MongoDB; sleep 1; done
