@@ -8,7 +8,7 @@ deploy:
   strategy: git
   buildpack: https://github.com/kazeburo/heroku-buildpack-perl-procfile.git
   api_key:
-    secure: S1lHrhqjN0/ch/J+i7Nxyueoh+AhtAbtxPZuKaP/u7BOmonSSw++vOgVcqv8pcZf83B5LXcNj4bb0AwcNFn3awhmQ4zXTWHt4wWrK3KEEK6uEfkEswrQsOdnzlp6VCllJ5Ivzfg4U7B0DHRSyLCz73fK6b2I3JE7e/8G7KO5xU4=
+    secure: NMnr9mK5yjLTxYFUE35U39Y/v0D5h8c65MX/SLjQKI92Zga+xdhRcHIMzK1s7p3Q0exo8TpFc3mUsDi4ujWN9wuFOAdNBDUuM7BraBM0GU+8OV38pThCbkPAG3fUabJNYzeWv+bCO0MeNO7sKZMZY5QAS9lg67Vk6stWa9hHZgY=
   app: lrrr
   on:
     repo: davemenninger/lrrr

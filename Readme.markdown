@@ -23,11 +23,18 @@ This is a test app for trying new things in Mojolicious.
 * prevent bots with captcha or something ( how to automate tests then? ) ~~secret phrase in source code~~
 * ~~make authentication more secure ( bcrypt )~~
 * more tests for authentication, registration
-* add authorization ( logged in user can see some things, but not others )
+* ~~add authorization ( logged in user can see some things, but not others )~~
 * tests for authorization
-* user can create document objects into mongo
-* roles: admin, author, reader?
+* ~~user can create document objects into mongo~~
+* fix default admin user kludge
+* roles: ~~admin~~, ~~guest~~, author, reader?
 * more templates/routes: ~~home~~, ~~user~~, user/:username, "posts" ...
 * Dockerfile; add mongodb setup? fixtures?
 
 ## Credits
+
+* https://github.com/benvanstaveren/Mojolicious-Plugin-Authentication
+* https://github.com/byterock/mojolicious-plugin-authorization
+* https://github.com/Bivee/mojolicious-project-base
+* https://github.com/naturalist/Mojolicious--Plugin--Bcrypt
+* https://github.com/oliwer/mango
