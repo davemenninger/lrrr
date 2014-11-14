@@ -8,6 +8,7 @@ use warnings;
 use Mojo::Base 'Mojolicious';
 use Mango;
 use Lrrr::Authentication;
+use Mojolicious::Plugin::Bcrypt;
 
 # This method will run once at server start
 sub startup {
@@ -17,6 +18,7 @@ sub startup {
   $self->helper( mango => sub { state $mango = Mango->new($mongo_uri) } );
 
   # auth
+  $self->plugin( bcrypt => { cost => 6 } );
   $self->plugin( authentication => {
     autoload_user => 1,
     load_user => sub { return Lrrr::Authentication->load_user(@_); },
@@ -35,6 +37,8 @@ sub startup {
   $r->any('/login')->to( controller => 'login', action => 'login' );
 
   $r->get('/logout')->to( controller => 'login', action => 'logoff' );
+
+  $r->any('/register')->to( controller => 'register', action => 'register' );
 
   $r->get('/user' => sub {
     $self = shift;

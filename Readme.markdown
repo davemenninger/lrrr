@@ -18,8 +18,11 @@ This is a test app for trying new things in Mojolicious.
 * ~~connect authentication to external database ( mongo )~~
 * wait for November 18th, 2014 for mongolab to upgrade default version to 2.6, argh!
 * fix travis hack after travis upgrades default mongodb version to 2.6
-* make authentication more secure ( hash, salt )
-* tests for authentication
+* ~~register new user~~
+* ~~prevent register dupe username~~
+* prevent bots with captcha or something ( how to automate tests then? ) ~~secret phrase in source code~~
+* ~~make authentication more secure ( bcrypt )~~
+* more tests for authentication, registration
 * add authorization ( logged in user can see some things, but not others )
 * tests for authorization
 * user can create document objects into mongo

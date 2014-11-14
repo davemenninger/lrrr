@@ -1,0 +1,12 @@
+% layout 'default';
+% title 'Register';
+<h2>Register</h2>
+
+<p><%= $msg %></p>
+
+%= form_for '/register' => ( method => 'POST' ) => begin
+  username: <%= text_field 'u' %><br/>
+  password: <%= password_field 'p' %><br/>
+  secret phrase: <%= text_field 'secret_phrase' %><br/>
+  %= submit_button 'Log in'
+% end

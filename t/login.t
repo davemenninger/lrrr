@@ -9,12 +9,10 @@ use Test::Mojo;
 use Mango;
 
 my $t = Test::Mojo->new('Lrrr');
-
-# Clean up before start
 my $collection = $t->app->mango->db->collection('users');
 
 # insert user and pass
-my $oid = $collection->insert({username => 'bender', password => 'rodriguez'});
+my $oid = $collection->insert({username => 'bender', password => $t->app->bcrypt('rodriguez') } );
 
 # test login bad
 $t->post_ok('/login' => form =>  { u => 'philip', p => 'fry' })->status_is(200)->content_like(qr/failed/i);
