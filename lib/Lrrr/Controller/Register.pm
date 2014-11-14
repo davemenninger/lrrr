@@ -9,38 +9,43 @@ use Mojo::Base 'Mojolicious::Controller';
 sub register {
   my $self = shift;
 
-  if ( $self->req->method eq 'POST'){
-    if( !$self->is_user_authenticated ) {
-      my $u = $self->req->param('u');
-      my $p = $self->req->param('p');
+  if ( 
+    $self->is_user_authenticated && 
+    $self->has_privilege('create_user') ) {
 
-      # secret_phrase is a kludge to prevent bots
-      my $secret_phrase = $self->req->param('secret_phrase');
+    if ( $self->req->method eq 'POST' ) {
+      my $u    = $self->req->param('u');
+      my $p    = $self->req->param('p');
+      my $role = $self->req->param('role');
 
-      if ( defined $secret_phrase && $secret_phrase eq 'zoidberg' ) {
-        my $doc = $self->mango->db->collection('users')->find_one( { username => $u } );
-        if( $doc ){
-          $self->render( msg => 'username taken' );
-        } else {
-          my $oid = $self->mango->db->collection('users')->insert( { username => $u , password => $self->bcrypt($p) } );
-          if( $oid ) {
-            $self->render(msg => 'welcome '.$oid );
-          } else {
-            $self->render(msg => 'failed to insert' );
-          }
-        }
-      } else {
-        $self->render(msg => 'wrong secret phrase');
+      my $doc =
+        $self->mango->db->collection('users')->find_one( { username => $u } );
+      if ($doc) {
+        $self->render( msg => 'username taken' );
       }
-    } else {
-      $self->render( msg => 'already logged in' );
+      else {
+        # insert the user
+        my $oid = $self->mango->db->collection('users')->insert(
+          {
+            username => $u,
+            password => $self->bcrypt($p),
+            role     => $role
+          }
+        );
+        if ($oid) {
+          $self->render( msg => 'welcome ' . $oid );
+        }
+        else {
+          $self->render( msg => 'failed to insert' );
+        }
+      }
     }
-  } else { #not POST, so GET
-    if( !$self->is_user_authenticated ) {
-      $self->render(msg => 'register here:');
-    } else {
-      $self->render(msg => 'already logged in');
+    else {    # not POST, so GET
+      $self->render( msg => 'register a new user:' );
     }
+  }
+  else {      #not admin
+    $self->render( msg => 'you must be logged in as admin.' );
   }
 }
 

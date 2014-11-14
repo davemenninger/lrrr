@@ -10,3 +10,12 @@
   You are not logged in.
 % }
 </p>
+<p>
+Your role is <%= role %>.
+</p>
+<p>
+Your privs are
+% for my $p ( privileges() ){
+  <li><%= $p %></li>
+% }
+</p>

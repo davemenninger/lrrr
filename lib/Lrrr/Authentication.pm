@@ -18,6 +18,8 @@ sub validate_user {
   my $collection = $app->mango->db->collection('users');
   my $user = $collection->find_one( {username => $username} );
 
+  $app->session( 'role' => ( defined $user->{role} ) ? $user->{role} : 'guest' );
+
   return $user->{username} if ( defined $user->{username} && defined $user->{password} && $app->bcrypt_validate($password, $user->{password}) );
   return undef;
 }

@@ -34,6 +34,7 @@ sub login {
 sub logoff {
   my $self = shift;
   $self->logout();
+  $self->session(expires => 1);
   $self->render(
     template=>'login/login',
     format=>'html',

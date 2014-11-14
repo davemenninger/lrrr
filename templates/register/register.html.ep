@@ -7,6 +7,6 @@
 %= form_for '/register' => ( method => 'POST' ) => begin
   username: <%= text_field 'u' %><br/>
   password: <%= password_field 'p' %><br/>
-  secret phrase: <%= text_field 'secret_phrase' %><br/>
-  %= submit_button 'Log in'
+  role: <%= text_field 'role' %><br/>
+  %= submit_button 'create'
 % end

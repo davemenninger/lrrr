@@ -1,13 +1,13 @@
 package Lrrr;
-
-$VERSION = '0.01';
-
 use strict;
 use warnings;
+
+our $VERSION = '0.01';
 
 use Mojo::Base 'Mojolicious';
 use Mango;
 use Lrrr::Authentication;
+use Lrrr::Authorization;
 use Mojolicious::Plugin::Bcrypt;
 
 # This method will run once at server start
@@ -21,9 +21,19 @@ sub startup {
   $self->plugin( bcrypt => { cost => 6 } );
   $self->plugin( authentication => {
     autoload_user => 1,
-    load_user => sub { return Lrrr::Authentication->load_user(@_); },
+    load_user     => sub { return Lrrr::Authentication->load_user(@_); },
     validate_user => sub { return Lrrr::Authentication->validate_user(@_); }
   });
+  $self->plugin( authorization => {
+      has_priv   => sub { return Lrrr::Authorization->has_priv(@_); },
+      is_role    => sub { return Lrrr::Authorization->is_role(@_); },
+      user_privs => sub { return Lrrr::Authorization->user_privs(@_) },
+      user_role  => sub { return Lrrr::Authorization->user_role(@_) }
+  });
+
+  # hmm, how to get rid of this:
+  # default admin user:
+  $self->mango->db->collection('users')->insert({ username => 'hermes', password => $self->bcrypt('conrad'), role => 'admin' });
 
   # Router
   my $r = $self->routes;
