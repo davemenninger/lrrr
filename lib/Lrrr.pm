@@ -31,10 +31,6 @@ sub startup {
       user_role  => sub { return Lrrr::Authorization->user_role(@_) }
   });
 
-  # hmm, how to get rid of this:
-  # default admin user:
-  $self->mango->db->collection('users')->insert({ username => 'hermes', password => $self->bcrypt('conrad'), role => 'admin' });
-
   # Router
   my $r = $self->routes;
 

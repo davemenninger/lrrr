@@ -20,19 +20,23 @@ This is a test app for trying new things in Mojolicious.
 * fix travis hack after travis upgrades default mongodb version to 2.6
 * ~~register new user~~
 * ~~prevent register dupe username~~
-* prevent bots with captcha or something ( how to automate tests then? ) ~~secret phrase in source code~~
+* ~~prevent bots with captcha or something ( how to automate tests then? )~~
+* ~~script to create default admin user~~
+* get default admin user/pass from ENV instead of hardcoded
 * ~~make authentication more secure ( bcrypt )~~
-* more tests for authentication, registration
+* ~~more tests for authentication, registration~~
 * ~~add authorization ( logged in user can see some things, but not others )~~
 * tests for authorization
 * ~~user can create document objects into mongo~~
-* fix default admin user kludge
 * roles: ~~admin~~, ~~guest~~, author, reader?
+* scripts: setup new db, 
 * more templates/routes: ~~home~~, ~~user~~, user/:username, "posts" ...
+* bootstrap, bower
 * Dockerfile; add mongodb setup? fixtures?
 
 ## Credits
 
+* http://12factor.net/
 * https://github.com/benvanstaveren/Mojolicious-Plugin-Authentication
 * https://github.com/byterock/mojolicious-plugin-authorization
 * https://github.com/Bivee/mojolicious-project-base
