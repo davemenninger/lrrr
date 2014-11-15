@@ -29,6 +29,7 @@ sub login {
       $self->render(msg => 'already logged in');
     }
   }
+  return;
 }
 
 sub logoff {
@@ -40,6 +41,7 @@ sub logoff {
     format=>'html',
     msg => 'you are now logged out.'
   );
+  return;
 }
 
 1;

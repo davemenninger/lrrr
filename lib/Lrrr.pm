@@ -56,6 +56,7 @@ sub startup {
     $self->render( text => ($self->is_user_authenticated) ? 'secrets!' : 'go away!' );
   });
 
+  return;
 }
 
 1;

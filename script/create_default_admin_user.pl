@@ -10,7 +10,7 @@ use Crypt::Eksblowfish::Bcrypt qw(bcrypt en_base64);
 sub _salt {
   my $num = 999999;
   my $cr = crypt( rand($num), rand($num) ) . crypt( rand($num), rand($num) );
-  en_base64( substr( $cr, 4, 16 ) );
+  return en_base64( substr( $cr, 4, 16 ) );
 }
 
 my $cost = sprintf( '%02d', 6 );

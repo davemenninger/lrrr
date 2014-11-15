@@ -47,6 +47,7 @@ sub register {
   else {      #not admin
     $self->render( msg => 'you must be logged in as admin.' );
   }
+  return;
 }
 
 1;
