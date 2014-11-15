@@ -1,5 +1,8 @@
 package Lrrr::Authorization;
 
+use strict;
+use warnings;
+
 my %roles = (
   admin => { create_user => 1, delete_user => 1 },
   guest => { foo => 1 }
@@ -43,7 +46,7 @@ sub user_privs {
 
   my $privs = $roles{$role};
 
-  return sort keys( %{$privs} );
+  return keys( %{$privs} );
 }
 
 sub user_role {

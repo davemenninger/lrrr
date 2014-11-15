@@ -1,5 +1,8 @@
 package Lrrr::Authentication;
 
+use strict;
+use warnings;
+
 sub load_user {
   my ($class, $app, $username) = @_;
 
@@ -9,7 +12,7 @@ sub load_user {
   return {
     'username' => $user->{username}
   } if ( defined $user->{username} );
-  return undef;
+  return;
 }
 
 sub validate_user {
@@ -21,7 +24,7 @@ sub validate_user {
   $app->session( 'role' => ( defined $user->{role} ) ? $user->{role} : 'guest' );
 
   return $user->{username} if ( defined $user->{username} && defined $user->{password} && $app->bcrypt_validate($password, $user->{password}) );
-  return undef;
+  return;
 }
 
 1;
