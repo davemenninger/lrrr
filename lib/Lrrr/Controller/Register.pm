@@ -8,6 +8,7 @@ use Mojo::Base 'Mojolicious::Controller';
 # This action will render a template
 sub register {
   my $self = shift;
+  my $collection = $self->mango->db->collection('users');
 
   if ( $self->is_user_authenticated
     && $self->has_privilege('create_user') )
@@ -18,14 +19,13 @@ sub register {
       my $p    = $self->req->param('p');
       my $role = $self->req->param('role');
 
-      my $doc =
-        $self->mango->db->collection('users')->find_one( { username => $u } );
+      my $doc = $collection->find_one( { username => $u } );
       if ($doc) {
         $self->render( msg => 'username taken' );
       }
       else {
         # insert the user
-        my $oid = $self->mango->db->collection('users')->insert(
+        my $oid = $collection->insert(
           {
             username => $u,
             password => $self->bcrypt($p),
