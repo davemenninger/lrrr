@@ -22,7 +22,7 @@ This is a test app for trying new things in Mojolicious.
 * ~~prevent register dupe username~~
 * ~~prevent bots with captcha or something ( how to automate tests then? )~~
 * ~~script to create default admin user~~
-* get default admin user/pass from ENV instead of hardcoded
+* ~~get default admin user/pass from ENV instead of hardcoded~~
 * ~~make authentication more secure ( bcrypt )~~
 * ~~more tests for authentication, registration~~
 * ~~add authorization ( logged in user can see some things, but not others )~~
@@ -30,7 +30,7 @@ This is a test app for trying new things in Mojolicious.
 * catch-all route, switch routes to use over() conditions
 * ~~user can create document objects into mongo~~
 * roles: ~~admin~~, ~~guest~~, author, reader?
-* scripts: setup new db, 
+* scripts: setup new db,
 * more templates/routes: ~~home~~, ~~user~~, user/:username, "posts" ...
 * bootstrap, bower
 * Dockerfile; add mongodb setup? fixtures?
