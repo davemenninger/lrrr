@@ -9,9 +9,9 @@ use Mojo::Base 'Mojolicious::Controller';
 sub register {
   my $self = shift;
 
-  if ( 
-    $self->is_user_authenticated && 
-    $self->has_privilege('create_user') ) {
+  if ( $self->is_user_authenticated
+    && $self->has_privilege('create_user') )
+  {
 
     if ( $self->req->method eq 'POST' ) {
       my $u    = $self->req->param('u');

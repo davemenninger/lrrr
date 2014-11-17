@@ -5,7 +5,7 @@ use warnings;
 
 my %roles = (
   admin => { create_user => 1, delete_user => 1 },
-  guest => { foo => 1 }
+  guest => { foo         => 1 }
 );
 
 sub has_priv {
