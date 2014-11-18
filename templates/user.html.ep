@@ -2,20 +2,19 @@
 % title 'User';
 <h2>User</h2>
 
-<p>
 % if( my $authentication = stash '__authentication__' ) {
+<p>
   You are logged in as <%= $authentication->{user}->{username} %>.
   Here is <a href="/hidden">a page</a> with something you can only see if logged in.
-% } else {
-  You are not logged in.
-% }
 </p>
 <p>
-Your role is <%= role %>.
-</p>
-<p>
-Your privs are
+  Your role is <%= role %> and your privs are
 % for my $p ( privileges() ){
   <li><%= $p %></li>
 % }
 </p>
+% } else {
+<p>
+  You are not logged in.
+</p>
+% }

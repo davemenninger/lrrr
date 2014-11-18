@@ -68,6 +68,15 @@ sub startup {
     }
   );
 
+  # catch-all route
+  $r->any(
+    '/*whatever' => {whatever => ''} => sub {
+      my $c        = shift;
+      my $whatever = $c->param('whatever');
+      $c->render(text => "/$whatever did not match.", status => 404);
+    }
+  );
+
   return;
 }
 

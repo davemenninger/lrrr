@@ -27,7 +27,8 @@ This is a test app for trying new things in Mojolicious.
 * ~~more tests for authentication, registration~~
 * ~~add authorization ( logged in user can see some things, but not others )~~
 * tests for authorization
-* catch-all route, switch routes to use over() conditions
+* ~~catch-all route~~, switch routes to use over() conditions
+* Mojolicious plugins: CSRFProtect, VaildateTiny
 * ~~user can create document objects into mongo~~
 * roles: ~~admin~~, ~~guest~~, author, reader?
 * scripts: setup new db,
