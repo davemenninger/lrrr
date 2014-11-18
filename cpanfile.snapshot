@@ -1,0 +1,298 @@
+# carton snapshot format: version 1.0
+DISTRIBUTIONS
+  CPAN-Meta-2.142690
+    pathname: D/DA/DAGOLDEN/CPAN-Meta-2.142690.tar.gz
+    provides:
+      CPAN::Meta 2.142690
+      CPAN::Meta::Converter 2.142690
+      CPAN::Meta::Feature 2.142690
+      CPAN::Meta::History 2.142690
+      CPAN::Meta::Merge 2.142690
+      CPAN::Meta::Prereqs 2.142690
+      CPAN::Meta::Spec 2.142690
+      CPAN::Meta::Validator 2.142690
+    requirements:
+      CPAN::Meta::Requirements 2.121
+      CPAN::Meta::YAML 0.008
+      Carp 0
+      ExtUtils::MakeMaker 6.17
+      JSON::PP 2.27200
+      Parse::CPAN::Meta 1.4414
+      Scalar::Util 0
+      strict 0
+      version 0.88
+      warnings 0
+  Class-Mix-0.005
+    pathname: Z/ZE/ZEFRAM/Class-Mix-0.005.tar.gz
+    provides:
+      Class::Mix 0.005
+    requirements:
+      Carp 0
+      Exporter 0
+      Module::Build 0
+      Params::Classify 0
+      Test::More 0
+      constant 0
+      if 0
+      parent 0
+      perl 5.006
+      strict 0
+      warnings 0
+  Crypt-Eksblowfish-0.009
+    pathname: Z/ZE/ZEFRAM/Crypt-Eksblowfish-0.009.tar.gz
+    provides:
+      Crypt::Eksblowfish 0.009
+      Crypt::Eksblowfish::Bcrypt 0.009
+      Crypt::Eksblowfish::Blowfish 0.009
+      Crypt::Eksblowfish::Family 0.009
+      Crypt::Eksblowfish::Subkeyed 0.009
+      Crypt::Eksblowfish::Uklblowfish 0.009
+    requirements:
+      Carp 0
+      Class::Mix 0.001
+      Exporter 0
+      ExtUtils::CBuilder 0.15
+      MIME::Base64 2.21
+      Module::Build 0
+      Test::More 0
+      XSLoader 0
+      parent 0
+      perl 5.006
+      strict 0
+      warnings 0
+  Mango-1.14
+    pathname: S/SR/SRI/Mango-1.14.tar.gz
+    provides:
+      Mango 1.14
+      Mango::BSON undef
+      Mango::BSON::Binary undef
+      Mango::BSON::Code undef
+      Mango::BSON::Document undef
+      Mango::BSON::ObjectID undef
+      Mango::BSON::Time undef
+      Mango::BSON::Timestamp undef
+      Mango::BSON::_MaxKey undef
+      Mango::BSON::_MinKey undef
+      Mango::Bulk undef
+      Mango::Collection undef
+      Mango::Cursor undef
+      Mango::Cursor::Query undef
+      Mango::Database undef
+      Mango::GridFS undef
+      Mango::GridFS::Reader undef
+      Mango::GridFS::Writer undef
+      Mango::Protocol undef
+    requirements:
+      ExtUtils::MakeMaker 0
+      Mojolicious 5.40
+  Module-Build-0.4210
+    pathname: L/LE/LEONT/Module-Build-0.4210.tar.gz
+    provides:
+      Module::Build 0.4210
+      Module::Build::Base 0.4210
+      Module::Build::Compat 0.4210
+      Module::Build::Config 0.4210
+      Module::Build::Cookbook 0.4210
+      Module::Build::Dumper 0.4210
+      Module::Build::Notes 0.4210
+      Module::Build::PPMMaker 0.4210
+      Module::Build::Platform::Default 0.4210
+      Module::Build::Platform::MacOS 0.4210
+      Module::Build::Platform::Unix 0.4210
+      Module::Build::Platform::VMS 0.4210
+      Module::Build::Platform::VOS 0.4210
+      Module::Build::Platform::Windows 0.4210
+      Module::Build::Platform::aix 0.4210
+      Module::Build::Platform::cygwin 0.4210
+      Module::Build::Platform::darwin 0.4210
+      Module::Build::Platform::os2 0.4210
+      Module::Build::PodParser 0.4210
+      inc::latest 0.4210
+      inc::latest::private 0.4210
+    requirements:
+      CPAN::Meta 2.142060
+      CPAN::Meta::YAML 0.003
+      Cwd 0
+      Data::Dumper 0
+      ExtUtils::CBuilder 0.27
+      ExtUtils::Install 0
+      ExtUtils::Manifest 0
+      ExtUtils::Mkbootstrap 0
+      ExtUtils::ParseXS 2.21
+      File::Basename 0
+      File::Compare 0
+      File::Copy 0
+      File::Find 0
+      File::Path 0
+      File::Spec 0.82
+      File::Temp 0.15
+      Getopt::Long 0
+      Module::Metadata 1.000002
+      Parse::CPAN::Meta 1.4401
+      Perl::OSType 1
+      Pod::Man 2.17
+      Test::Harness 3.16
+      Test::More 0.49
+      Text::Abbrev 0
+      Text::ParseWords 0
+      perl 5.008000
+      version 0.87
+  Mojolicious-5.56
+    pathname: S/SR/SRI/Mojolicious-5.56.tar.gz
+    provides:
+      Mojo undef
+      Mojo::Asset undef
+      Mojo::Asset::File undef
+      Mojo::Asset::Memory undef
+      Mojo::Base undef
+      Mojo::ByteStream undef
+      Mojo::Cache undef
+      Mojo::Collection undef
+      Mojo::Content undef
+      Mojo::Content::MultiPart undef
+      Mojo::Content::Single undef
+      Mojo::Cookie undef
+      Mojo::Cookie::Request undef
+      Mojo::Cookie::Response undef
+      Mojo::DOM undef
+      Mojo::DOM::CSS undef
+      Mojo::DOM::HTML undef
+      Mojo::Date undef
+      Mojo::EventEmitter undef
+      Mojo::Exception undef
+      Mojo::Headers undef
+      Mojo::HelloWorld undef
+      Mojo::Home undef
+      Mojo::IOLoop undef
+      Mojo::IOLoop::Client undef
+      Mojo::IOLoop::Delay undef
+      Mojo::IOLoop::Server undef
+      Mojo::IOLoop::Stream undef
+      Mojo::JSON undef
+      Mojo::JSON::Pointer undef
+      Mojo::JSON::_Bool undef
+      Mojo::Loader undef
+      Mojo::Log undef
+      Mojo::Message undef
+      Mojo::Message::Request undef
+      Mojo::Message::Response undef
+      Mojo::Parameters undef
+      Mojo::Path undef
+      Mojo::Reactor undef
+      Mojo::Reactor::EV undef
+      Mojo::Reactor::Poll undef
+      Mojo::Server undef
+      Mojo::Server::CGI undef
+      Mojo::Server::Daemon undef
+      Mojo::Server::Hypnotoad undef
+      Mojo::Server::Morbo undef
+      Mojo::Server::PSGI undef
+      Mojo::Server::PSGI::_IO undef
+      Mojo::Server::Prefork undef
+      Mojo::Template undef
+      Mojo::Transaction undef
+      Mojo::Transaction::HTTP undef
+      Mojo::Transaction::WebSocket undef
+      Mojo::URL undef
+      Mojo::Upload undef
+      Mojo::UserAgent undef
+      Mojo::UserAgent::CookieJar undef
+      Mojo::UserAgent::Proxy undef
+      Mojo::UserAgent::Server undef
+      Mojo::UserAgent::Transactor undef
+      Mojo::Util undef
+      Mojolicious 5.56
+      Mojolicious::Command undef
+      Mojolicious::Command::cgi undef
+      Mojolicious::Command::cpanify undef
+      Mojolicious::Command::daemon undef
+      Mojolicious::Command::eval undef
+      Mojolicious::Command::generate undef
+      Mojolicious::Command::generate::app undef
+      Mojolicious::Command::generate::lite_app undef
+      Mojolicious::Command::generate::makefile undef
+      Mojolicious::Command::generate::plugin 0.01
+      Mojolicious::Command::get undef
+      Mojolicious::Command::inflate undef
+      Mojolicious::Command::prefork undef
+      Mojolicious::Command::psgi undef
+      Mojolicious::Command::routes undef
+      Mojolicious::Command::test undef
+      Mojolicious::Command::version undef
+      Mojolicious::Commands undef
+      Mojolicious::Controller undef
+      Mojolicious::Lite undef
+      Mojolicious::Plugin undef
+      Mojolicious::Plugin::Charset undef
+      Mojolicious::Plugin::Config undef
+      Mojolicious::Plugin::Config::Sandbox undef
+      Mojolicious::Plugin::DefaultHelpers undef
+      Mojolicious::Plugin::EPLRenderer undef
+      Mojolicious::Plugin::EPRenderer undef
+      Mojolicious::Plugin::HeaderCondition undef
+      Mojolicious::Plugin::JSONConfig undef
+      Mojolicious::Plugin::Mount undef
+      Mojolicious::Plugin::PODRenderer undef
+      Mojolicious::Plugin::TagHelpers undef
+      Mojolicious::Plugins undef
+      Mojolicious::Renderer undef
+      Mojolicious::Routes undef
+      Mojolicious::Routes::Match undef
+      Mojolicious::Routes::Pattern undef
+      Mojolicious::Routes::Route undef
+      Mojolicious::Sessions undef
+      Mojolicious::Static undef
+      Mojolicious::Types undef
+      Mojolicious::Validator undef
+      Mojolicious::Validator::Validation undef
+      Test::Mojo undef
+      ojo undef
+    requirements:
+      ExtUtils::MakeMaker 0
+      Pod::Simple 3.09
+      Time::Local 1.2
+  Mojolicious-Plugin-Authentication-1.26
+    pathname: M/MA/MADCAT/Mojolicious-Plugin-Authentication-1.26.tar.gz
+    provides:
+      Mojolicious::Plugin::Authentication 1.26
+    requirements:
+      ExtUtils::MakeMaker 6.30
+      Mojo::Base 0
+  Mojolicious-Plugin-Authorization-1.03.02
+    pathname: B/BY/BYTEROCK/Mojolicious-Plugin-Authorization-1.03.02.tar.gz
+    provides:
+      Mojolicious::Plugin::Authorization 1.0302
+    requirements:
+      ExtUtils::MakeMaker 6.30
+      Module::Build 0.38
+      Mojo::Base 0
+      Mojolicious::Lite 0
+      Test::Mojo 0
+      Test::More 0
+      strict 0
+      warnings 0
+  Mojolicious-Plugin-Bcrypt-0.14
+    pathname: M/MI/MINIMAL/Mojolicious-Plugin-Bcrypt-0.14.tar.gz
+    provides:
+      Mojolicious::Plugin::Bcrypt 0.14
+    requirements:
+      Crypt::Eksblowfish::Bcrypt 0
+      ExtUtils::MakeMaker 6.30
+      Mojo::Base 0
+      Mojolicious 4.0
+      strict 0
+      warnings 0
+  Params-Classify-0.013
+    pathname: Z/ZE/ZEFRAM/Params-Classify-0.013.tar.gz
+    provides:
+      Params::Classify 0.013
+    requirements:
+      Exporter 0
+      ExtUtils::ParseXS 2.2006
+      Module::Build 0
+      Scalar::Util 1.01
+      Test::More 0
+      parent 0
+      perl 5.006001
+      strict 0
+      warnings 0

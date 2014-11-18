@@ -1,6 +1,12 @@
 # Lrrr: Like [Jrrr](https://github.com/davemenninger/jrrr), but bigger
 
-This is a test app for trying new things in Mojolicious.
+This is an example Mojolicious app.  Its goals are:
+
+* have users that can login and have different permissions
+* be "12-factor" using carton, Heroku, etc, etc
+* stick to best-ish practices ( testing, Travis CI, perlcritic, pertidy )
+* make use of MongoDB
+* be a base/template for making future apps
 
 [![Lrrr](http://img4.wikia.nocookie.net/__cb20130329124434/en.futurama/images/c/c5/Lurr.png)](http://theinfosphere.org/Lrrr)
 
@@ -28,7 +34,7 @@ This is a test app for trying new things in Mojolicious.
 * ~~add authorization ( logged in user can see some things, but not others )~~
 * tests for authorization
 * ~~catch-all route~~, switch routes to use over() conditions
-* Mojolicious plugins: CSRFProtect, VaildateTiny
+* Mojolicious plugins: CSRFProtect, VaildateTiny, Toto
 * ~~user can create document objects into mongo~~
 * roles: ~~admin~~, ~~guest~~, author, reader?
 * scripts: setup new db,

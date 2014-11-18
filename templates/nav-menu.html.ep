@@ -1,0 +1,8 @@
+<nav>
+  <a href="/">home</a>
+  % if( my $authentication = stash '__authentication__' ) {
+  Logged in as: <a href="/user"><%= $authentication->{user}->{username} %></a> <a href="/logout">logout</a>
+  % } else {
+  <a href="/login">login</a>
+  % }
+</nav>

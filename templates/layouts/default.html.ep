@@ -2,11 +2,7 @@
 <html>
   <head><title><%= title %></title></head>
   <body>
-    <a href="/">home</a>
-    <a href="/login">login</a>
-    <a href="/logout">logout</a>
-    <a href="/register">register</a>
-    <a href="/user">user</a>
+    <%= include 'nav-menu' %>
     <%= content %>
   </body>
 </html>
