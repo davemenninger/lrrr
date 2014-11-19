@@ -22,7 +22,7 @@ This is an example Mojolicious app.  Its goals are:
 * ~~move authentication routes into own controller~~
 * ~~create login page ( post )~~
 * ~~connect authentication to external database ( mongo )~~
-* wait for November 18th, 2014 for mongolab to upgrade default version to 2.6, argh!
+* ~~wait for November 18th, 2014 for mongolab to upgrade default version to 2.6, argh!~~
 * fix travis hack after travis upgrades default mongodb version to 2.6
 * ~~register new user~~
 * ~~prevent register dupe username~~
