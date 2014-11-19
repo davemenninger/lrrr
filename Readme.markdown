@@ -45,6 +45,7 @@ This is an example Mojolicious app.  Its goals are:
 ## Credits
 
 * http://12factor.net/
+* https://github.com/kazeburo/heroku-buildpack-perl-procfile
 * https://github.com/benvanstaveren/Mojolicious-Plugin-Authentication
 * https://github.com/byterock/mojolicious-plugin-authorization
 * https://github.com/Bivee/mojolicious-project-base
