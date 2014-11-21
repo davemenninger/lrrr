@@ -4,8 +4,10 @@ use strict;
 use warnings;
 
 my %roles = (
-  admin => { create_user => 1, delete_user => 1 },
-  guest => { foo         => 1 }
+  admin =>
+    { create_user => 1, delete_user => 1, create_post => 1, delete_post => 1 },
+  author => { create_post => 1 },
+  guest  => { read_posts  => 1 }
 );
 
 sub has_priv {

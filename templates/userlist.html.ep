@@ -1,0 +1,10 @@
+% layout 'default';
+% title 'User List';
+<h2>User List</h2>
+
+% my $docs = mango->db->collection('users')->find;
+<ul>
+% while ( my $doc = $docs->next ) {
+<li><%= $doc->{username} %>, <%= $doc->{role} %></li>
+% }
+</ul>

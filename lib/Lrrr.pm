@@ -60,6 +60,8 @@ sub startup {
     }
   );
 
+  $r->get('/users')->to( controller => 'users', action => 'list' );
+
   $r->get(
     '/hidden' => sub {
       $self = shift;

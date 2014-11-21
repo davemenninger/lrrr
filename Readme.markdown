@@ -33,6 +33,7 @@ This is an example Mojolicious app.  Its goals are:
 * ~~more tests for authentication, registration~~
 * ~~add authorization ( logged in user can see some things, but not others )~~
 * tests for authorization
+* tests for user routes
 * ~~catch-all route~~, switch routes to use over() conditions
 * Mojolicious plugins: CSRFProtect, VaildateTiny, Toto
 * ~~user can create document objects into mongo~~
