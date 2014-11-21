@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head><title><%= title %></title></head>
+  <head>
+    <link rel=icon href=./Lrrr.png type="image/png">
+    <title><%= title %></title>
+  </head>
   <body>
     <%= include 'nav-menu' %>
     <%= content %>
